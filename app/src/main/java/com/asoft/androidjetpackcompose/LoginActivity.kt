@@ -12,27 +12,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.asoft.androidjetpackcompose.ui.theme.AndroidJetpackComposeTheme
 
-class HomeActivity : ComponentActivity() {
-
+class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContent {
+
             AndroidJetpackComposeTheme {
-                // A surface container using the 'background' color from the theme
+
                 Surface(
+
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
 
+                ) {
+
+                    getGreeting("Android")
+
+                }
+
+            }
+
+        }
+
+    }
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun getGreeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
         modifier = modifier
@@ -41,8 +48,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun GreetingPreview2() {
     AndroidJetpackComposeTheme {
-        Greeting("Android")
+        getGreeting("Android")
     }
 }

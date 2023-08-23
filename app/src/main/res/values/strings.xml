@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AndroidJetpackCompose</string>
     <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_button">ButtonActivity</string>
+    <string name="title_activity_text_view">TextViewActivity</string>
 </resources>

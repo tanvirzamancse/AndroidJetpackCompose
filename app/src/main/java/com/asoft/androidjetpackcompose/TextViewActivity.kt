@@ -16,6 +16,7 @@ import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Send
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
@@ -59,54 +60,108 @@ fun Greeting() {
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.fillMaxSize()
     ) {
-        var username: String by remember { mutableStateOf("") }
 
-        TextField(
-            value = username,
-            onValueChange = {
-                username = it
-            },
+        editTextOne()
+        editTextTwo()
 
-            modifier = Modifier
-                .padding(10.dp)
-                .background(Color.Transparent, shape = RoundedCornerShape(50))
-                .height(55.dp),
-            shape = RoundedCornerShape(50),
-            singleLine = true,
-            maxLines = 1,
-            colors = TextFieldDefaults.colors(
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent,
-                disabledIndicatorColor = Color.Transparent,
-               
-                focusedContainerColor = Color.Yellow,
-                unfocusedContainerColor = Color.Red
-            ),
-            placeholder = {
-                Text(text = "Enter your username")
-            },
-            label = {
-                Text(text = "Username")
-            },
-            leadingIcon = {
-                Icon(imageVector = Icons.Default.AccountBox, contentDescription = "")
-            },
-            prefix = { Text("+91", color = Color.Black) },
-            trailingIcon = {
-                Icon(imageVector = Icons.Default.Send, contentDescription = "")
-            },
-            textStyle = TextStyle(
-                color = Color.Black,
-                fontSize = 15.sp,
-                textDecoration = TextDecoration.None,
-               baselineShift = BaselineShift.None ),
 
-        )
     }
 }
 
+@Composable
+fun editTextTwo() {
+    var username: String by remember { mutableStateOf("") }
 
+    OutlinedTextField(
+        value = username,
+        onValueChange = {
+            username = it
+        },
 
+        modifier = Modifier
+            .background(Color.Transparent, shape = RoundedCornerShape(15)),
+
+        shape = RoundedCornerShape(15),
+        singleLine = true,
+        maxLines = 1,
+
+        colors = TextFieldDefaults.colors(
+
+            focusedIndicatorColor = Color.Black,
+            unfocusedIndicatorColor = Color.Black,
+            disabledIndicatorColor = Color.Black,
+            focusedContainerColor = Color.Green,
+            unfocusedContainerColor = Color.Green,
+            disabledContainerColor = Color.Green,
+
+        ),
+
+        placeholder = {
+            Text(text = "Enter your username")
+        },
+        label = {
+            Text(text = "Username", color = Color.Black)
+        },
+        leadingIcon = {
+            Icon(imageVector = Icons.Default.AccountBox, contentDescription = "",tint = Color.Black)
+        },
+        prefix = { Text("", color = Color.Black) },
+        trailingIcon = {
+            /* Icon(imageVector = Icons.Default.Send, contentDescription = "", tint = Color.Black)*/
+        },
+        textStyle = TextStyle(
+            color = Color.Black,
+            fontSize = 15.sp,
+           ),
+
+        )
+}
+
+@Composable
+fun editTextOne() {
+    var username: String by remember { mutableStateOf("") }
+
+    TextField(value = username,
+        onValueChange = {
+            username = it
+        },
+
+        modifier = Modifier
+            .padding(10.dp)
+            .background(Color.Transparent, shape = RoundedCornerShape(15))
+            .height(55.dp),
+        shape = RoundedCornerShape(15),
+        singleLine = true,
+        maxLines = 1,
+        colors = TextFieldDefaults.colors(
+
+            focusedIndicatorColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Transparent,
+            disabledIndicatorColor = Color.Transparent,
+            focusedContainerColor = Color.LightGray,
+            unfocusedContainerColor = Color.LightGray
+        ),
+        placeholder = {
+            Text(text = "Enter your username")
+        },
+        label = {
+            Text(text = "Username", color = Color.Black)
+        },
+        leadingIcon = {
+            Icon(imageVector = Icons.Default.AccountBox, contentDescription = "",tint = Color.Black)
+        },
+        prefix = { Text("", color = Color.Black) },
+        trailingIcon = {
+            /* Icon(imageVector = Icons.Default.Send, contentDescription = "", tint = Color.Black)*/
+        },
+        textStyle = TextStyle(
+            color = Color.Black,
+            fontSize = 15.sp,
+            textDecoration = TextDecoration.None,
+            baselineShift = BaselineShift.None ),
+
+        )
+}
 
 
 @Preview(showBackground = true, showSystemUi = true)
